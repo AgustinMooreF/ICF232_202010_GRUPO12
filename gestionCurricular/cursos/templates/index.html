@@ -1,0 +1,13 @@
+<h1>Bienvenido a venta de joyas</h1>
+<br/>
+<br/>
+{% if user.is_authenticated %}
+    <h2>Bienvenido {{user.username}}</h2>
+    <a href="/cursos">Listado de cursos disponibles este semestre </a>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <p>Para acceder al sistema debes ingresar usuario y clave</p>
+    <a href="{% url 'login' %}">Login</a>
+    <p>Si no tienes un usuario puedes registrarte</p>
+    <a href="{% url 'signup' %}">Signup</a>
+{% endif %}
