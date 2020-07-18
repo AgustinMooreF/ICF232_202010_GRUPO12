@@ -39,8 +39,8 @@
 		}
         .user_card_logged{
 			width: 80%;
-			margin-top: auto;
-			margin-bottom: auto;
+			margin-top: 10%;
+			margin-bottom:auto;
 			background: #5c6bc0;
 			position: relative;
 			display: flex;
@@ -51,6 +51,7 @@
 			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
+            min-height: 200px;
 
 		}
 
@@ -84,11 +85,10 @@
 		}
         p{
             color:white;
-            background-color: tomato;
         }
         .contenedor1{
             text-align: center;
-            width: 70%;
+            width: 90%;
             margin:auto;
             color: white;
         }
@@ -101,18 +101,26 @@
             color: white;
         }
         .gallery li{
-            background-color: tomato;
-            display: inline;
+            display: inline-block;
             margin: 10px;
             padding: 5px;
             list-style: none; 
             border: tomato;
             float: left;
-            width: 25%;
+            width: 20%;
         }
 
         .product_title{
             padding-top: 10px;
+        }
+        .footer {
+            margin-top: 100px;
+            background-color: rgba(122, 88, 214, 0);
+            text-align: center;
+        }
+
+        .footer p{
+            color:black;
         }
 	</style>
 
@@ -136,7 +144,7 @@
           </nav>
 
             <div class="d-flex justify-content-center h-100">
-                <div class="user_card_logged h-50">
+                <div class="user_card_logged mh-80">
                     <h2 style="color:white; margin-left: auto; margin-right: auto;">GALERIA</h2>
                     <div class="contAlt">
                         <div class="contenedor1">
@@ -145,10 +153,10 @@
                                 {% for product in products %}
                                 <li>
                                     <div class="product_container">
-                                        <img src="{{product.image.url}}" alt="" width="200px" height="200px">
-                                        <h4 class="product_title">
+                                        <img src="{{product.image.url}}" alt="" width="150px" height="150px">
+                                        <p class="product_title">
                                             {{product}}
-                                        </h4>
+                                        </p>
                                     </div>
                                 </li>
                                 {% endfor %}
@@ -159,6 +167,7 @@
                     </div>
                 </div>
             </div>
+            <footer class="footer"><p>Joyería SPA. Todos los derechos reservados. 2020.</p></footer>
         {% else %}
         <div class="d-flex justify-content-end h-100">
             <!-- <div style="width: 40%;" class="h-100" style="margin-top:200px; margin-bottom: auto;"> -->
@@ -177,7 +186,7 @@
                                 <a class="btn login_btn" href="{% url 'signup' %}" class="ml-2">Registrate</a>
                                 <div class="mt-4">
                                     <div class="d-flex justify-content-center links">
-                                        No tienes una cuenta? <a href="{% url 'signup' %}" class="ml-2">Registrate</a>
+                                        ¿No tienes una cuenta? <a href="{% url 'signup' %}" class="ml-2">Registrate</a>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +197,7 @@
         </div>
         {% endif %}
                    
-	</div>
+    </div>
 </body>
 
 </html>
