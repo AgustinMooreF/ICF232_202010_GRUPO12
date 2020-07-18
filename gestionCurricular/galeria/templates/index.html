@@ -84,6 +84,7 @@
 		}
         p{
             color:white;
+            background-color: tomato;
         }
         .contenedor1{
             text-align: center;
@@ -98,6 +99,15 @@
         .navbg{
             background: #5c6bc0;
             color: white;
+        }
+        .gallery li{
+            background-color: tomato;
+            display: inline;
+            margin: 10px;
+            padding: 5px;
+            list-style: none; 
+            border: tomato;
+            float: left;
         }
 	</style>
 
@@ -125,7 +135,15 @@
                     <h2 style="color:white; margin-left: auto; margin-right: auto;">GALERIA</h2>
                     <div class="contAlt">
                         <div class="contenedor1">
-                            <p>contenedor fotos galeria</p>
+                            
+                            <ul class="gallery">
+                                {% for product in products %}
+                                <li>
+                                    {{product}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                           
                         </div>
                             
                     </div>
