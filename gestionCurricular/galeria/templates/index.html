@@ -108,6 +108,11 @@
             list-style: none; 
             border: tomato;
             float: left;
+            width: 25%;
+        }
+
+        .product_title{
+            padding-top: 10px;
         }
 	</style>
 
@@ -139,7 +144,12 @@
                             <ul class="gallery">
                                 {% for product in products %}
                                 <li>
-                                    {{product}}
+                                    <div class="product_container">
+                                        <img src="{{product.image.url}}" alt="" width="200px" height="200px">
+                                        <h4 class="product_title">
+                                            {{product}}
+                                        </h4>
+                                    </div>
                                 </li>
                                 {% endfor %}
                             </ul>
